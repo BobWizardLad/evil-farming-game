@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnmfo6p65khyq"]
+[gd_scene load_steps=7 format=3 uid="uid://cnmfo6p65khyq"]
 
 [ext_resource type="Texture2D" uid="uid://bd72niwhl7rj2" path="res://world_tilemap.png" id="1_2r0rb"]
 [ext_resource type="Texture2D" uid="uid://kc8q23kokatl" path="res://walkingSheet.png" id="2_01ua7"]
+[ext_resource type="Script" path="res://Player.gd" id="2_mxh0d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pm18i"]
 texture = ExtResource("1_2r0rb")
@@ -89,6 +90,7 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 1, 65538, 0, 0, 65539, 0, 0,
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(29, 25)
+script = ExtResource("2_mxh0d")
 metadata/_edit_group_ = true
 
 [node name="Collision" type="CollisionShape2D" parent="Player"]
