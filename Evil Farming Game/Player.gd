@@ -27,7 +27,7 @@ func player_navigate(delta):
 		direction += Vector2.LEFT
 	
 	# Final movement calculation
-	velocity = direction.normalized() * real_speed
+	velocity = direction.normalized()* real_speed
 	
 	move_and_slide()
 	
