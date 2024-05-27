@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://ng4mjo1qho2h"]
 
 [ext_resource type="Script" path="res://GameItem.gd" id="1_dd1rb"]
-[ext_resource type="Texture2D" uid="uid://enrs3ki486x7" path="res://icon.svg" id="2_5br84"]
+[ext_resource type="Texture2D" uid="uid://c1tec8elqys0e" path="res://karot.png" id="2_f7w7v"]
 
 [node name="KarotSeed" type="Node"]
 script = ExtResource("1_dd1rb")
 item_name = "Karot Seed"
-sprite = ExtResource("2_5br84")
+item_sprite = ExtResource("2_f7w7v")
 is_seed = true

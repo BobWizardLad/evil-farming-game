@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnmfo6p65khyq"]
+[gd_scene load_steps=9 format=3 uid="uid://cnmfo6p65khyq"]
 
 [ext_resource type="Script" path="res://TavernScene.gd" id="1_5th13"]
 [ext_resource type="Texture2D" uid="uid://kc8q23kokatl" path="res://walkingSheet.png" id="2_01ua7"]
@@ -6,7 +6,6 @@
 [ext_resource type="TileSet" uid="uid://cowhxil65yet6" path="res://TavernTilemap.tres" id="5_ajn2r"]
 [ext_resource type="Script" path="res://FluidInventory.gd" id="5_ausaj"]
 [ext_resource type="Script" path="res://UIService.gd" id="6_wcuyd"]
-[ext_resource type="Texture2D" uid="uid://enrs3ki486x7" path="res://icon.svg" id="7_y25tx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec2i2"]
 size = Vector2(36, 26)
@@ -23,18 +22,19 @@ script = ExtResource("5_ausaj")
 [node name="UIService" type="Node" parent="."]
 script = ExtResource("6_wcuyd")
 
-[node name="InventoryPeek" type="HBoxContainer" parent="UIService"]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 55.0
-offset_bottom = 50.0
+[node name="InventoryScroll" type="ScrollContainer" parent="UIService"]
+anchors_preset = -1
+anchor_left = 0.017
+anchor_top = 0.031
+anchor_right = 0.017
+anchor_bottom = 0.031
+offset_left = 0.415998
+offset_top = -0.0880013
+offset_right = 40.416
+offset_bottom = 39.912
+horizontal_scroll_mode = 0
 
-[node name="Item" type="TextureRect" parent="UIService/InventoryPeek"]
-layout_mode = 2
-texture = ExtResource("7_y25tx")
-expand_mode = 2
-
-[node name="Label" type="Label" parent="UIService/InventoryPeek"]
+[node name="InventoryContainer" type="VBoxContainer" parent="UIService/InventoryScroll"]
 layout_mode = 2
 
 [node name="Environment" type="Node2D" parent="."]
@@ -73,3 +73,5 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_01ua7")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
+
+[connection signal="add_item_update" from="FluidInventory" to="UIService" method="_rebuild_inventory_interface"]

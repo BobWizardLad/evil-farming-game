@@ -4,7 +4,8 @@ extends Node
 class_name GameItem
 
 @export var item_name: String
-@export var sprite: Texture2D
+@export var item_count: int
+@export var item_sprite: Texture2D
 @export var is_key_item: bool
 @export var is_seed: bool
 
