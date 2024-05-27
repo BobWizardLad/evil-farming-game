@@ -1,7 +1,14 @@
 extends CharacterBody2D
 
+# Const
 @export var SPEED = 100.0
 @export var SPRINT_CONST = 2.0
+
+# Child static ref
+@onready var INTERACTCOLLIDE: CollisionShape2D = $InteractCollide
+
+# Siblings
+@onready var TILEMAP: TileMap = $"../Environment/TileMap"
 
 var real_speed = SPEED
 var direction = Vector2.ZERO
@@ -9,6 +16,7 @@ var direction = Vector2.ZERO
 func _physics_process(_delta):
 	# Move down into the player nav code.
 	player_navigate(_delta)
+	interact()
 
 func player_navigate(delta):
 	# Sprinting for the massive map, multiply the 
@@ -35,3 +43,8 @@ func player_navigate(delta):
 	direction = Vector2.ZERO
 	velocity = Vector2.ZERO
 	real_speed = SPEED
+
+func interact():
+	# Get the local tilemap cell and see if it is a workstation; 3 is workstation layer
+	if TILEMAP.get_cell_tile_data(3, TILEMAP.local_to_map(position)) != null:
+		print(TILEMAP.get_cell_tile_data(3, TILEMAP.local_to_map(position)).get_custom_data("cooking"))
