@@ -15,6 +15,10 @@ run/main_scene="res://TavernScene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/scale=1.55
+
 [input]
 
 sprint={
