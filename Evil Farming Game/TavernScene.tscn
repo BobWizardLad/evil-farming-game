@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Player.gd" id="2_mxh0d"]
 [ext_resource type="TileSet" uid="uid://cowhxil65yet6" path="res://TavernTilemap.tres" id="5_ajn2r"]
 [ext_resource type="Script" path="res://FluidInventory.gd" id="5_ausaj"]
-[ext_resource type="Texture2D" uid="uid://bd72niwhl7rj2" path="res://world_tilemap.png" id="6_s836p"]
+[ext_resource type="Texture2D" uid="uid://brk2a3h2ia6la" path="res://Guy.png" id="6_dg785"]
 [ext_resource type="Script" path="res://UIService.gd" id="6_wcuyd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec2i2"]
@@ -14,8 +14,8 @@ size = Vector2(21, 18)
 size = Vector2(50, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pwf13"]
-atlas = ExtResource("6_s836p")
-region = Rect2(16, 0, 32, 32)
+atlas = ExtResource("6_dg785")
+region = Rect2(0, 0, 32, 32)
 
 [node name="TavernScene" type="Node2D"]
 script = ExtResource("1_5th13")
@@ -61,7 +61,7 @@ layer_3/navigation_enabled = false
 layer_3/tile_data = PackedInt32Array()
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(217, 76)
+position = Vector2(208, 76)
 script = ExtResource("2_mxh0d")
 metadata/_edit_group_ = true
 
