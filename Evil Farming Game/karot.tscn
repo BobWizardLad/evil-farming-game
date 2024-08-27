@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0jxeghfeitvh"]
+[gd_scene load_steps=3 format=3 uid="uid://d0jxeghfeitvh"]
 
 [ext_resource type="Texture2D" uid="uid://c1tec8elqys0e" path="res://karot.png" id="1_lcj36"]
 
-[node name="Item" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8xfop"]
+radius = 8.48291
+height = 39.5869
+
+[node name="Item" type="StaticBody2D" groups=["Item"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lcj36")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+rotation = 0.761733
+shape = SubResource("CapsuleShape2D_8xfop")

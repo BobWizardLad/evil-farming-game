@@ -1,14 +1,13 @@
 extends CharacterBody2D
+class_name Player
 
 # Const
 @export var SPEED = 100.0
 @export var SPRINT_CONST = 2.0
-
-# Child static ref
-@onready var INTERACTCOLLIDE: CollisionShape2D = $InteractCollide
+@export var items = 0
 
 # Siblings
-@onready var TILEMAP: TileMap = $"../Environment/TileMap"
+@onready var INTERACT: Area2D = $InteractArea
 
 var real_speed = SPEED
 var direction = Vector2.ZERO
@@ -35,7 +34,7 @@ func player_navigate(delta):
 		direction += Vector2.LEFT
 	
 	# Final movement calculation
-	velocity = direction.normalized()* real_speed
+	velocity = direction.normalized() * real_speed
 	
 	move_and_slide()
 	
@@ -45,6 +44,9 @@ func player_navigate(delta):
 	real_speed = SPEED
 
 func interact():
-	# Get the local tilemap cell and see if it is a workstation; 3 is workstation layer
-	if TILEMAP.get_cell_tile_data(3, TILEMAP.local_to_map(position)) != null:
-		print(TILEMAP.get_cell_tile_data(3, TILEMAP.local_to_map(position)).get_custom_data("cooking"))
+	if INTERACT.has_overlapping_bodies():
+		var item = INTERACT.get_overlapping_bodies()[0]
+		if item.is_in_group("Item"):
+			item.queue_free()
+			items += 1
+			

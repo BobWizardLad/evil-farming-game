@@ -2,27 +2,28 @@
 extends Node2D
 
 # Ref to item being picked up
-@export var ITEM: PackedScene = null
+@export var ITEM: PackedScene
+@export var spawn_delay: float
 
+@onready var SPAWN_TIMER: Timer = $SpawnTimer
+
+var current_item: Node = null
 var item_ready: bool = false
 
 func _ready():
-	# SPAWN THE ITEM
-	item_ready = spawn_new_item(ITEM.instantiate())
+	SPAWN_TIMER.start(spawn_delay)
 
 func _process(_delta):
-	# Continue to check if the item is in range
-	if not item_ready:
-		item_ready = spawn_new_item(ITEM.instantiate())
+	if current_item == null:
+		item_ready = false
+	
+	if not item_ready and SPAWN_TIMER.is_stopped():
+		SPAWN_TIMER.start(spawn_delay)
 
 # Spawn ITEM above self
-func spawn_new_item(item: Node) -> bool:
-	var new_node = item
+func _spawn_new_item() -> void:
+	var new_node: Node = ITEM.instantiate()
 	new_node.position = position
+	current_item = new_node
 	get_parent().add_child.call_deferred(new_node)
 	item_ready = true
-	return true
-
-# Will trigger the spawning of a new item by toggling the flag
-func _item_is_removed():
-	pass

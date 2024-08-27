@@ -2,7 +2,8 @@ extends Node2D
 
 @onready var MAP_DATA: TileMap = $Environment/TileMap
 @onready var FLUID_INV: FluidInventory = $FluidInventory
-@onready var UISERVICE: UIService = $UIService
+@onready var UISERVICE: Control = $UIService
+@onready var player: Player = $Player
 
 @onready var karot_seed: GameItem = load("res://seeds/KarotSeed.tscn").instantiate()
 
@@ -17,3 +18,6 @@ func _input(event):
 	
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		FLUID_INV.add_item(karot_seed)
+
+func _process(_delta):
+	UISERVICE.get_child(0).text = str(player.items)

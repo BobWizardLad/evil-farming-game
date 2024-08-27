@@ -1,23 +1,22 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnmfo6p65khyq"]
+[gd_scene load_steps=11 format=3 uid="uid://cnmfo6p65khyq"]
 
 [ext_resource type="Script" path="res://TavernScene.gd" id="1_5th13"]
 [ext_resource type="Script" path="res://Player.gd" id="2_mxh0d"]
 [ext_resource type="TileSet" uid="uid://cowhxil65yet6" path="res://TavernTilemap.tres" id="5_ajn2r"]
 [ext_resource type="Script" path="res://FluidInventory.gd" id="5_ausaj"]
 [ext_resource type="Texture2D" uid="uid://brk2a3h2ia6la" path="res://Guy.png" id="6_dg785"]
-[ext_resource type="Script" path="res://UIService.gd" id="6_wcuyd"]
 [ext_resource type="Script" path="res://ItemSpawner.gd" id="7_8m7wl"]
 [ext_resource type="PackedScene" uid="uid://d0jxeghfeitvh" path="res://karot.tscn" id="8_1gpcy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec2i2"]
-size = Vector2(21, 18)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvf6h"]
-size = Vector2(50, 48)
+size = Vector2(22.5, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pwf13"]
 atlas = ExtResource("6_dg785")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fulfv"]
+radius = 23.0
 
 [node name="TavernScene" type="Node2D"]
 script = ExtResource("1_5th13")
@@ -44,44 +43,45 @@ layer_3/name = "WorkStations"
 layer_3/navigation_enabled = false
 layer_3/tile_data = PackedInt32Array()
 
-[node name="UIService" type="Node" parent="."]
-script = ExtResource("6_wcuyd")
+[node name="UIService" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="InventoryScroll" type="ScrollContainer" parent="UIService"]
-anchors_preset = -1
-anchor_left = 0.017
-anchor_top = 0.031
-anchor_right = 0.017
-anchor_bottom = 0.031
-offset_left = 0.415998
-offset_top = -0.0880013
-offset_right = 40.416
-offset_bottom = 39.912
-horizontal_scroll_mode = 0
-
-[node name="InventoryContainer" type="VBoxContainer" parent="UIService/InventoryScroll"]
-layout_mode = 2
+[node name="Items" type="Label" parent="UIService"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(208, 76)
 script = ExtResource("2_mxh0d")
 metadata/_edit_group_ = true
 
-[node name="Collision" type="CollisionShape2D" parent="Player"]
-position = Vector2(0.5, 7)
+[node name="MapCollision" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.25, 7)
 shape = SubResource("RectangleShape2D_ec2i2")
-
-[node name="InteractCollide" type="CollisionShape2D" parent="Player"]
-shape = SubResource("RectangleShape2D_xvf6h")
 
 [node name="Sprite" type="Sprite2D" parent="Player"]
 texture = SubResource("AtlasTexture_pwf13")
 region_enabled = true
 region_rect = Rect2(0, 0, 32, 32)
 
+[node name="InteractArea" type="Area2D" parent="Player"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="PickupCollideShape" type="CollisionShape2D" parent="Player/InteractArea"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_fulfv")
+
 [node name="ItemSpawner" type="Node2D" parent="."]
 position = Vector2(343, 117)
 script = ExtResource("7_8m7wl")
 ITEM = ExtResource("8_1gpcy")
+spawn_delay = 1.5
+
+[node name="SpawnTimer" type="Timer" parent="ItemSpawner"]
+one_shot = true
 
 [connection signal="add_item_update" from="FluidInventory" to="UIService" method="_rebuild_inventory_interface"]
+[connection signal="timeout" from="ItemSpawner/SpawnTimer" to="ItemSpawner" method="_spawn_new_item"]
