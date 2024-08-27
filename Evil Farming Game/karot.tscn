@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0jxeghfeitvh"]
+
+[ext_resource type="Texture2D" uid="uid://c1tec8elqys0e" path="res://karot.png" id="1_lcj36"]
+
+[node name="Item" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lcj36")
