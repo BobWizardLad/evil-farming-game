@@ -9,13 +9,27 @@ class_name Player
 # Siblings
 @onready var INTERACT: Area2D = $InteractArea
 
+# Flag for certainn interactables active
+var interactable: bool = false
+var interactive_object: Node
+
 var real_speed = SPEED
 var direction = Vector2.ZERO
+
+func _ready():
+	pass
 
 func _physics_process(_delta):
 	# Move down into the player nav code.
 	player_navigate(_delta)
+	player_input(_delta)
 	interact()
+
+func player_input(_delta):
+	if Input.is_action_pressed("interact") && interactable:
+		if interactive_object.get_parent() is ItemCollector and items > 0 and interactive_object.get_parent().can_deposit():
+			items -= 1
+			interactive_object.get_parent().on_player_delivery()
 
 func player_navigate(delta):
 	# Sprinting for the massive map, multiply the 
@@ -50,3 +64,12 @@ func interact():
 			item.queue_free()
 			items += 1
 			
+
+func _on_interact_area_area_entered(area):
+	if area.get_parent().name == "ItemCollector":
+		interactable = true
+		interactive_object = area
+
+func _on_interact_area_area_exited(area):
+	interactable = false
+	interactive_object = null

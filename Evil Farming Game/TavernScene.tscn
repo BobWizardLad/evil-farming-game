@@ -1,74 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://cnmfo6p65khyq"]
+[gd_scene load_steps=7 format=3 uid="uid://cnmfo6p65khyq"]
 
 [ext_resource type="Script" path="res://TavernScene.gd" id="1_5th13"]
-[ext_resource type="Script" path="res://Player.gd" id="2_mxh0d"]
+[ext_resource type="PackedScene" uid="uid://l3rbfoaqqqk5" path="res://player.tscn" id="3_lw36w"]
 [ext_resource type="TileSet" uid="uid://cowhxil65yet6" path="res://TavernTilemap.tres" id="5_ajn2r"]
-[ext_resource type="Script" path="res://FluidInventory.gd" id="5_ausaj"]
-[ext_resource type="Texture2D" uid="uid://brk2a3h2ia6la" path="res://Guy.png" id="6_dg785"]
-[ext_resource type="Script" path="res://ItemSpawner.gd" id="7_8m7wl"]
+[ext_resource type="PackedScene" uid="uid://ck7nbavhoxqkt" path="res://item_spawner.tscn" id="6_n8oxa"]
+[ext_resource type="PackedScene" uid="uid://w8l2pr8x1f6d" path="res://item_collector.tscn" id="7_oero0"]
 [ext_resource type="PackedScene" uid="uid://d0jxeghfeitvh" path="res://karot.tscn" id="8_1gpcy"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec2i2"]
-size = Vector2(22.5, 18)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h56vk"]
-atlas = ExtResource("6_dg785")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lwsea"]
-atlas = ExtResource("6_dg785")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8k04r"]
-atlas = ExtResource("6_dg785")
-region = Rect2(0, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oqkfq"]
-atlas = ExtResource("6_dg785")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xm3qq"]
-atlas = ExtResource("6_dg785")
-region = Rect2(64, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ksqr6"]
-atlas = ExtResource("6_dg785")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fv0lg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h56vk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lwsea")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8k04r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oqkfq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xm3qq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ksqr6")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 10.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_fulfv"]
-radius = 23.0
 
 [node name="TavernScene" type="Node2D"]
 script = ExtResource("1_5th13")
-
-[node name="FluidInventory" type="Node" parent="."]
-script = ExtResource("5_ausaj")
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -98,37 +38,10 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(208, 76)
-script = ExtResource("2_mxh0d")
-metadata/_edit_group_ = true
+[node name="Player" parent="." instance=ExtResource("3_lw36w")]
 
-[node name="MapCollision" type="CollisionShape2D" parent="Player"]
-position = Vector2(-0.25, 7)
-shape = SubResource("RectangleShape2D_ec2i2")
+[node name="ItemSpawner" parent="." instance=ExtResource("6_n8oxa")]
 
-[node name="Sprite" type="AnimatedSprite2D" parent="Player"]
-sprite_frames = SubResource("SpriteFrames_fv0lg")
-animation = &"new_animation"
-autoplay = "new_animation"
-frame_progress = 0.850157
-
-[node name="InteractArea" type="Area2D" parent="Player"]
-collision_layer = 2
-collision_mask = 2
-
-[node name="PickupCollideShape" type="CollisionShape2D" parent="Player/InteractArea"]
-position = Vector2(-1, 1)
-shape = SubResource("CircleShape2D_fulfv")
-
-[node name="ItemSpawner" type="Node2D" parent="."]
-position = Vector2(343, 117)
-script = ExtResource("7_8m7wl")
-ITEM = ExtResource("8_1gpcy")
-spawn_delay = 1.5
-
-[node name="SpawnTimer" type="Timer" parent="ItemSpawner"]
-one_shot = true
-
-[connection signal="add_item_update" from="FluidInventory" to="UIService" method="_rebuild_inventory_interface"]
-[connection signal="timeout" from="ItemSpawner/SpawnTimer" to="ItemSpawner" method="_spawn_new_item"]
+[node name="ItemCollector" parent="." instance=ExtResource("7_oero0")]
+position = Vector2(157, 229)
+seeking_item = ExtResource("8_1gpcy")

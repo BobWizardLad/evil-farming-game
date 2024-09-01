@@ -7,7 +7,7 @@ extends Node2D
 
 @onready var SPAWN_TIMER: Timer = $SpawnTimer
 
-var current_item: Node = null
+var current_item: GameItem = null
 var item_ready: bool = false
 
 func _ready():
@@ -22,7 +22,7 @@ func _process(_delta):
 
 # Spawn ITEM above self
 func _spawn_new_item() -> void:
-	var new_node: Node = ITEM.instantiate()
+	var new_node: GameItem = ITEM.instantiate()
 	new_node.position = position
 	current_item = new_node
 	get_parent().add_child.call_deferred(new_node)

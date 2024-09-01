@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0jxeghfeitvh"]
+[gd_scene load_steps=4 format=3 uid="uid://d0jxeghfeitvh"]
 
+[ext_resource type="Script" path="res://GameItem.gd" id="1_d4uya"]
 [ext_resource type="Texture2D" uid="uid://c1tec8elqys0e" path="res://karot.png" id="1_lcj36"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8xfop"]
@@ -9,6 +10,10 @@ height = 39.5869
 [node name="Item" type="StaticBody2D" groups=["Item"]]
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_d4uya")
+item_name = "Karot"
+item_count = 1
+item_sprite = ExtResource("1_lcj36")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lcj36")
