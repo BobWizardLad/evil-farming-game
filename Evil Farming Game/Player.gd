@@ -6,8 +6,9 @@ class_name Player
 @export var SPRINT_CONST = 2.0
 @export var items = 0
 
-# Siblings
+# Children
 @onready var INTERACT: Area2D = $InteractArea
+@onready var ITEMS: Label = $Camera2D/Items
 
 # Flag for certainn interactables active
 var interactable: bool = false
@@ -18,6 +19,9 @@ var direction = Vector2.ZERO
 
 func _ready():
 	pass
+
+func _process(delta):
+	ITEMS.text = str(items)
 
 func _physics_process(_delta):
 	# Move down into the player nav code.
