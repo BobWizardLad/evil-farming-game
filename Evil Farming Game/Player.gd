@@ -8,7 +8,7 @@ class_name Player
 
 # Children
 @onready var INTERACT: Area2D = $InteractArea
-@onready var ITEMS: Label = $Camera2D/Items
+@onready var ITEMS: Label = $Control/Label
 
 # Flag for certainn interactables active
 var interactable: bool = false
