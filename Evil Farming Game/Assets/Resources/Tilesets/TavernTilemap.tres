@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=11 format=3 uid="uid://cowhxil65yet6"]
 
-[ext_resource type="Texture2D" uid="uid://csc8viyjm6nod" path="res://tilesWall.png" id="1_4xpdm"]
-[ext_resource type="Texture2D" uid="uid://7ogg7i8kfar4" path="res://blueGrass.png" id="1_i4p6q"]
-[ext_resource type="Texture2D" uid="uid://c8fxdy1kvirgr" path="res://dirtTerrain.png" id="2_0qpoj"]
-[ext_resource type="Texture2D" uid="uid://qulvg5wjd3wv" path="res://tilesWallAUX.png" id="2_xti27"]
-[ext_resource type="Texture2D" uid="uid://cu0rk46hi5qxu" path="res://tilesWallShort.png" id="5_pevq2"]
+[ext_resource type="Texture2D" uid="uid://csc8viyjm6nod" path="res://Assets/Art/tilesWall.png" id="1_4xpdm"]
+[ext_resource type="Texture2D" uid="uid://7ogg7i8kfar4" path="res://Assets/Art/blueGrass.png" id="1_i4p6q"]
+[ext_resource type="Texture2D" uid="uid://c8fxdy1kvirgr" path="res://Assets/Art/dirtTerrain.png" id="2_0qpoj"]
+[ext_resource type="Texture2D" uid="uid://qulvg5wjd3wv" path="res://Assets/Art/tilesWallAUX.png" id="2_xti27"]
+[ext_resource type="Texture2D" uid="uid://cu0rk46hi5qxu" path="res://Assets/Art/tilesWallShort.png" id="5_pevq2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4pw8f"]
 texture = ExtResource("1_4xpdm")

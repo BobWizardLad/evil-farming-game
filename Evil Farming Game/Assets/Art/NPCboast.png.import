@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8fxdy1kvirgr"
-path="res://.godot/imported/dirtTerrain.png-423c2ff3cef180cb2d8e3158bd819ff3.ctex"
+uid="uid://sproj24amb8p"
+path="res://.godot/imported/NPCboast.png-621d389318473160193bae4f645e9d1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://dirtTerrain.png"
-dest_files=["res://.godot/imported/dirtTerrain.png-423c2ff3cef180cb2d8e3158bd819ff3.ctex"]
+source_file="res://Assets/Art/NPCboast.png"
+dest_files=["res://.godot/imported/NPCboast.png-621d389318473160193bae4f645e9d1e.ctex"]
 
 [params]
 

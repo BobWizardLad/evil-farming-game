@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3bt1oom7hqbo"
-path="res://.godot/imported/particleRun.png-d490410ba5976741850e7a80276528a0.ctex"
+uid="uid://csc8viyjm6nod"
+path="res://.godot/imported/tilesWall.png-d069173cded9448162be2b63db8fa486.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://particleRun.png"
-dest_files=["res://.godot/imported/particleRun.png-d490410ba5976741850e7a80276528a0.ctex"]
+source_file="res://Assets/Art/tilesWall.png"
+dest_files=["res://.godot/imported/tilesWall.png-d069173cded9448162be2b63db8fa486.ctex"]
 
 [params]
 

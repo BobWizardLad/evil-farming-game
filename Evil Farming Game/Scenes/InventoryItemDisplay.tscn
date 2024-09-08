@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2op2ge0xdevd"]
 
-[ext_resource type="Script" path="res://InventoryItemDisplay.gd" id="1_f08gu"]
-[ext_resource type="Texture2D" uid="uid://enrs3ki486x7" path="res://icon.svg" id="2_715ke"]
+[ext_resource type="Script" path="res://Assets/Scripts/InventoryItemDisplay.gd" id="1_f08gu"]
+[ext_resource type="Texture2D" uid="uid://enrs3ki486x7" path="res://Assets/Art/icon.svg" id="2_715ke"]
 
 [node name="InventoryItemDisplay" type="HBoxContainer"]
 script = ExtResource("1_f08gu")

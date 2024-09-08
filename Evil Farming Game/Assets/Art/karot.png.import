@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sproj24amb8p"
-path="res://.godot/imported/NPCboast.png-5e7447a42d0e51538e790a08bcf94dc5.ctex"
+uid="uid://c1tec8elqys0e"
+path="res://.godot/imported/karot.png-dd6d88f9d83a31029640c2dc5ebbc87b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPCboast.png"
-dest_files=["res://.godot/imported/NPCboast.png-5e7447a42d0e51538e790a08bcf94dc5.ctex"]
+source_file="res://Assets/Art/karot.png"
+dest_files=["res://.godot/imported/karot.png-dd6d88f9d83a31029640c2dc5ebbc87b.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck7nbavhoxqkt"]
 
-[ext_resource type="Script" path="res://ItemSpawner.gd" id="1_d0sne"]
-[ext_resource type="PackedScene" uid="uid://d0jxeghfeitvh" path="res://karot.tscn" id="2_toekh"]
+[ext_resource type="Script" path="res://Assets/Scripts/ItemSpawner.gd" id="1_d0sne"]
+[ext_resource type="PackedScene" uid="uid://d0jxeghfeitvh" path="res://Scenes/item.tscn" id="2_toekh"]
 
 [node name="ItemSpawner" type="Node2D"]
 position = Vector2(343, 117)

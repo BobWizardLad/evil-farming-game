@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxsyy2mhluafw"
-path="res://.godot/imported/NPCbuff.png-2c08809e1256c4dc720eca56144ef8a3.ctex"
+uid="uid://qulvg5wjd3wv"
+path="res://.godot/imported/tilesWallAUX.png-1190c1cfd063dabe0008c18003bd9782.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPCbuff.png"
-dest_files=["res://.godot/imported/NPCbuff.png-2c08809e1256c4dc720eca56144ef8a3.ctex"]
+source_file="res://Assets/Art/tilesWallAUX.png"
+dest_files=["res://.godot/imported/tilesWallAUX.png-1190c1cfd063dabe0008c18003bd9782.ctex"]
 
 [params]
 

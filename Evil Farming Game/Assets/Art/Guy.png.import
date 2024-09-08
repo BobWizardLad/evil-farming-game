@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kc8q23kokatl"
-path="res://.godot/imported/walkingSheet.png-b0f1b74907010e3ef08b7819243b6567.ctex"
+uid="uid://brk2a3h2ia6la"
+path="res://.godot/imported/Guy.png-fab95880ec6b0a4256c74170ee7bc2db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://walkingSheet.png"
-dest_files=["res://.godot/imported/walkingSheet.png-b0f1b74907010e3ef08b7819243b6567.ctex"]
+source_file="res://Assets/Art/Guy.png"
+dest_files=["res://.godot/imported/Guy.png-fab95880ec6b0a4256c74170ee7bc2db.ctex"]
 
 [params]
 

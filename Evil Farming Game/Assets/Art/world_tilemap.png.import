@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh8jjjpkk3j11"
-path="res://.godot/imported/NPCballoon.png-bd5506a510ba3043bd9028e086782aa5.ctex"
+uid="uid://bd72niwhl7rj2"
+path="res://.godot/imported/world_tilemap.png-02128eadde890a5cd6e4cac217ea15ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NPCballoon.png"
-dest_files=["res://.godot/imported/NPCballoon.png-bd5506a510ba3043bd9028e086782aa5.ctex"]
+source_file="res://Assets/Art/world_tilemap.png"
+dest_files=["res://.godot/imported/world_tilemap.png-02128eadde890a5cd6e4cac217ea15ec.ctex"]
 
 [params]
 

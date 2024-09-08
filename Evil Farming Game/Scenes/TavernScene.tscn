@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://cnmfo6p65khyq"]
 
-[ext_resource type="Script" path="res://TavernScene.gd" id="1_5th13"]
-[ext_resource type="TileSet" uid="uid://csx8n86mudhdq" path="res://FloorMap.tres" id="2_bgxpq"]
-[ext_resource type="PackedScene" uid="uid://l3rbfoaqqqk5" path="res://player.tscn" id="3_lw36w"]
-[ext_resource type="PackedScene" uid="uid://ck7nbavhoxqkt" path="res://item_spawner.tscn" id="6_n8oxa"]
-[ext_resource type="PackedScene" uid="uid://w8l2pr8x1f6d" path="res://item_collector.tscn" id="7_oero0"]
-[ext_resource type="PackedScene" uid="uid://d0jxeghfeitvh" path="res://karot.tscn" id="8_1gpcy"]
+[ext_resource type="Script" path="res://Assets/Scripts/TavernScene.gd" id="1_5th13"]
+[ext_resource type="TileSet" uid="uid://csx8n86mudhdq" path="res://Assets/Resources/Tilesets/FloorMap.tres" id="2_bgxpq"]
+[ext_resource type="PackedScene" uid="uid://l3rbfoaqqqk5" path="res://Scenes/player.tscn" id="3_lw36w"]
+[ext_resource type="PackedScene" uid="uid://ck7nbavhoxqkt" path="res://Scenes/item_spawner.tscn" id="6_n8oxa"]
+[ext_resource type="PackedScene" uid="uid://w8l2pr8x1f6d" path="res://Scenes/item_collector.tscn" id="7_oero0"]
+[ext_resource type="PackedScene" uid="uid://d0jxeghfeitvh" path="res://Scenes/item.tscn" id="8_1gpcy"]
 
 [node name="TavernScene" type="Node2D"]
 script = ExtResource("1_5th13")

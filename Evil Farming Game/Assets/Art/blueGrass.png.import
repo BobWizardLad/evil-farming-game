@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csc8viyjm6nod"
-path="res://.godot/imported/tilesWall.png-51a1cdb7721cbc732e8bf4ffabd2def8.ctex"
+uid="uid://7ogg7i8kfar4"
+path="res://.godot/imported/blueGrass.png-1db022e56dab49d5f858534011e6a653.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesWall.png"
-dest_files=["res://.godot/imported/tilesWall.png-51a1cdb7721cbc732e8bf4ffabd2def8.ctex"]
+source_file="res://Assets/Art/blueGrass.png"
+dest_files=["res://.godot/imported/blueGrass.png-1db022e56dab49d5f858534011e6a653.ctex"]
 
 [params]
 

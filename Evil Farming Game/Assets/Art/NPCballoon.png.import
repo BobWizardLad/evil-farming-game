@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brk2a3h2ia6la"
-path="res://.godot/imported/Guy.png-6aa9902d206ac2dbfd57e1bab6460832.ctex"
+uid="uid://dh8jjjpkk3j11"
+path="res://.godot/imported/NPCballoon.png-b94d8725acdd981efe4bb6e77b3382f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Guy.png"
-dest_files=["res://.godot/imported/Guy.png-6aa9902d206ac2dbfd57e1bab6460832.ctex"]
+source_file="res://Assets/Art/NPCballoon.png"
+dest_files=["res://.godot/imported/NPCballoon.png-b94d8725acdd981efe4bb6e77b3382f0.ctex"]
 
 [params]
 
