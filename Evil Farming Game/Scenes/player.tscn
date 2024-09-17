@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://l3rbfoaqqqk5"]
+[gd_scene load_steps=13 format=3 uid="uid://l3rbfoaqqqk5"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Player.gd" id="1_ejti4"]
 [ext_resource type="Texture2D" uid="uid://brk2a3h2ia6la" path="res://Assets/Art/Guy.png" id="2_df38p"]
+[ext_resource type="PackedScene" uid="uid://d35wgnmk4rtqt" path="res://Scenes/inventory.tscn" id="3_04dnc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec2i2"]
 size = Vector2(22.5, 18)
@@ -99,6 +100,8 @@ offset_top = 18.0
 offset_right = 65.0
 offset_bottom = 41.0
 text = "Test"
+
+[node name="Inventory" parent="." instance=ExtResource("3_04dnc")]
 
 [connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]
