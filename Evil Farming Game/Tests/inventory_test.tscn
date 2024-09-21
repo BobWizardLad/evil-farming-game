@@ -8,9 +8,10 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="InventoryItemTester" type="Node2D" parent="."]
+[node name="InventoryItemTester" type="Node2D" parent="." node_paths=PackedStringArray("inventory")]
 position = Vector2(356, 123)
 script = ExtResource("1_wc1b6")
+inventory = NodePath("Inventory")
 
 [node name="InventoryItem" type="Node" parent="InventoryItemTester"]
 script = ExtResource("1_00i8i")
@@ -18,20 +19,30 @@ item_res = ExtResource("3_pilrk")
 
 [node name="Sprite2D" type="Sprite2D" parent="InventoryItemTester"]
 
-[node name="Inventory" parent="." instance=ExtResource("4_kslkn")]
+[node name="Inventory" parent="InventoryItemTester" instance=ExtResource("4_kslkn")]
 
-[node name="InventoryItem" type="Node" parent="Inventory"]
+[node name="InventoryItem" type="Node" parent="InventoryItemTester/Inventory"]
 script = ExtResource("1_00i8i")
 item_res = ExtResource("3_pilrk")
 
-[node name="InventoryItem2" type="Node" parent="Inventory"]
+[node name="InventoryItem2" type="Node" parent="InventoryItemTester/Inventory"]
 script = ExtResource("1_00i8i")
 item_res = ExtResource("3_pilrk")
 
-[node name="InventoryItem3" type="Node" parent="Inventory"]
+[node name="InventoryItem3" type="Node" parent="InventoryItemTester/Inventory"]
 script = ExtResource("1_00i8i")
 item_res = ExtResource("3_pilrk")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 172.0
+offset_top = 81.0
+offset_right = 282.0
+offset_bottom = 112.0
+text = "ADD CARROT"
 
 [node name="InventoryUI" parent="." node_paths=PackedStringArray("INVENTORY_SRC") instance=ExtResource("5_1odfe")]
-INVENTORY_SRC = NodePath("../Inventory")
+INVENTORY_SRC = NodePath("../InventoryItemTester/Inventory")
 metadata/_edit_use_anchors_ = true
+
+[connection signal="inventory_changed" from="InventoryItemTester/Inventory" to="InventoryUI" method="_on_inventory_changed"]
+[connection signal="pressed" from="Button" to="InventoryItemTester" method="_on_button_pressed"]

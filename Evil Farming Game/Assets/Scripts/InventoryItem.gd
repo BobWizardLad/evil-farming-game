@@ -15,11 +15,6 @@ var is_key_item: bool
 func _ready():
 	load_item_res(item_res)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func load_item_res(item: Item) -> void:
 	item_name = item.item_name
 	item_sprite = item.item_sprite
