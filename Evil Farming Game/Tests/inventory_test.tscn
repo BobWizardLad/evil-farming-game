@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvun4hpfxefll"]
+[gd_scene load_steps=6 format=3 uid="uid://bvun4hpfxefll"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/InventoryItem.gd" id="1_00i8i"]
 [ext_resource type="Script" path="res://Tests/InventoryItemTester.gd" id="1_wc1b6"]
 [ext_resource type="Resource" uid="uid://oq08m4qmovub" path="res://Assets/Resources/Items/carrot.tres" id="3_pilrk"]
+[ext_resource type="PackedScene" uid="uid://d35wgnmk4rtqt" path="res://Scenes/inventory.tscn" id="4_kslkn"]
+[ext_resource type="PackedScene" uid="uid://daahau2uagpb7" path="res://Scenes/inventory_ui.tscn" id="5_1odfe"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,3 +17,21 @@ script = ExtResource("1_00i8i")
 item_res = ExtResource("3_pilrk")
 
 [node name="Sprite2D" type="Sprite2D" parent="InventoryItemTester"]
+
+[node name="Inventory" parent="." instance=ExtResource("4_kslkn")]
+
+[node name="InventoryItem" type="Node" parent="Inventory"]
+script = ExtResource("1_00i8i")
+item_res = ExtResource("3_pilrk")
+
+[node name="InventoryItem2" type="Node" parent="Inventory"]
+script = ExtResource("1_00i8i")
+item_res = ExtResource("3_pilrk")
+
+[node name="InventoryItem3" type="Node" parent="Inventory"]
+script = ExtResource("1_00i8i")
+item_res = ExtResource("3_pilrk")
+
+[node name="InventoryUI" parent="." node_paths=PackedStringArray("INVENTORY_SRC") instance=ExtResource("5_1odfe")]
+INVENTORY_SRC = NodePath("../Inventory")
+metadata/_edit_use_anchors_ = true
