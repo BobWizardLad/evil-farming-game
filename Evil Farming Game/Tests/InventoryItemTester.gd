@@ -12,3 +12,6 @@ func _ready():
 
 func _on_button_pressed() -> void:
 	inventory.add_item(carrot)
+
+func _on_button_2_pressed() -> void:
+	inventory.remove_item(carrot)

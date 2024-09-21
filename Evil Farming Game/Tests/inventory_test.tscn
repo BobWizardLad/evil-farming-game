@@ -40,9 +40,17 @@ offset_right = 282.0
 offset_bottom = 112.0
 text = "ADD CARROT"
 
+[node name="Button2" type="Button" parent="."]
+offset_left = 172.0
+offset_top = 119.0
+offset_right = 313.0
+offset_bottom = 150.0
+text = "REMOVE CARROT"
+
 [node name="InventoryUI" parent="." node_paths=PackedStringArray("INVENTORY_SRC") instance=ExtResource("5_1odfe")]
 INVENTORY_SRC = NodePath("../InventoryItemTester/Inventory")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="inventory_changed" from="InventoryItemTester/Inventory" to="InventoryUI" method="_on_inventory_changed"]
 [connection signal="pressed" from="Button" to="InventoryItemTester" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="InventoryItemTester" method="_on_button_2_pressed"]
