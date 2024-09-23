@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://daahau2uagpb7"]
+[gd_scene load_steps=3 format=3 uid="uid://daahau2uagpb7"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/inventory_ui.gd" id="1_2y3ko"]
+[ext_resource type="PackedScene" uid="uid://hamqyb4xlm7m" path="res://Scenes/inventory_ui_box.tscn" id="2_3gqut"]
 
 [node name="InventoryUI" type="Control"]
 layout_mode = 3
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2y3ko")
+inventory_box_template = ExtResource("2_3gqut")
 
-[node name="InvContainer" type="VBoxContainer" parent="."]
+[node name="InvContainer" type="HBoxContainer" parent="."]
 layout_mode = 0

@@ -8,7 +8,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	item_sprite.texture = inventory_item.item_sprite
+	pass
 
 func _on_button_pressed() -> void:
 	inventory.add_item(carrot)

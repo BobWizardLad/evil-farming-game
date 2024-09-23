@@ -3,9 +3,12 @@ class_name Inventory
 
 @onready var INVENTORY_ITEM_SRC: PackedScene = load("res://Scenes/inventory_item.tscn")
 
+# Stores a list of references to the loaded inventory items;
+# Caches the get_children call while excludes non-inventoryItems
 var _inventory: Array[InventoryItem] = []
 
-signal inventory_changed
+signal inventory_item_added
+signal inventory_item_removed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,25 +17,38 @@ func _ready():
 func load_inventory(inventory_items: Array):
 	for each in inventory_items:
 		if each is InventoryItem:
-			_inventory.append(each)
+			add_item(load(each.item_res.resource_path))
 
 # Add an item to the inventory tree
 func add_item(item: Item) -> void: #TEST
 	var inv_item: InventoryItem = INVENTORY_ITEM_SRC.instantiate()
 	inv_item.load_item_res(item)
-	add_child(inv_item)
-	_inventory.append(inv_item)
-	emit_signal("inventory_changed", true, inv_item)
+	if _inventory.size() >= 1:
+		for each in _inventory:
+			if each.item_name == inv_item.item_name:
+				_inventory[(_inventory.find(each))].item_count += 1
+				break
+			else:
+				add_child(inv_item)
+				_inventory.append(inv_item)
+				break
+	elif _inventory.size() == 0:
+		add_child(inv_item)
+		_inventory.append(inv_item)
+	
+	emit_signal("inventory_item_added", inv_item)
 
 # Remove an item from the inventory tree
 func remove_item(item: Item) -> void: #TEST
-	var inv_item: InventoryItem = null
+	var inv_item: InventoryItem = INVENTORY_ITEM_SRC.instantiate()
+	inv_item.load_item_res(item)
 	for each in _inventory:
-		if item.item_name == each.item_name:
-			inv_item = INVENTORY_ITEM_SRC.instantiate()
-			inv_item.load_item_res(item)
+		if item.item_name == each.item_name && each.item_count <= 1:
 			_inventory.remove_at(_inventory.find(each))
+			break
+		elif item.item_name == each.item_name && each.item_count > 1:
+			each.item_count -= 1
 			break
 		else:
 			pass
-	emit_signal("inventory_changed", false, inv_item)
+	emit_signal("inventory_item_removed", inv_item)

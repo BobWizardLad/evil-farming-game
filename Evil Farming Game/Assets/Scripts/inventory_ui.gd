@@ -1,9 +1,10 @@
 extends Control
+class_name InventoryUI
 
 @export var INVENTORY_SRC: Inventory
-@onready var inventory_box_template: PackedScene = load("res://Scenes/inventory_ui_box.tscn")
+@export var inventory_box_template: PackedScene
 
-@onready var INVCONTAINER: VBoxContainer = $InvContainer
+@export var INVCONTAINER: HBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,14 +18,25 @@ func create_inventory_box_item(inv_item: InventoryItem) -> InventoryUIBox:
 	i_box.item_sprite = inv_item.item_sprite
 	return i_box
 
-func _on_inventory_changed(added: bool, inv_item: InventoryItem) -> void:
-	print("CHANGE")
-	if added:
-		INVCONTAINER.add_child(create_inventory_box_item(inv_item))
-	elif not added:
+func _on_inventory_item_added(inv_item: InventoryItem) -> void:
+	if INVCONTAINER.get_children().size() >= 1:
 		for each in INVCONTAINER.get_children():
 			if each.item_name == inv_item.item_name:
-				each.queue_free()
-				break
-	else:
-		pass
+				each.item_count += 1
+				return
+		INVCONTAINER.add_child(create_inventory_box_item(inv_item))
+		return
+	elif INVCONTAINER.get_children().size() < 1:
+		INVCONTAINER.add_child(create_inventory_box_item(inv_item))
+		return
+
+func _on_inventory_item_removed(inv_item: InventoryItem) -> void:
+	if INVCONTAINER.get_children().size() >= 1:
+		for each in INVCONTAINER.get_children():
+			if each.item_name == inv_item.item_name:
+				each.item_count -= 1
+				return
+		print("Inventory: Could not find item.")
+	if INVCONTAINER.get_children().size() < 1:
+		print("Inventory: Attempted to remove an item that does not exist!")
+		return
