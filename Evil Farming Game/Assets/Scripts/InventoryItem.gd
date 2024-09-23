@@ -16,6 +16,7 @@ func _ready():
 	load_item_res(item_res)
 
 func load_item_res(item: Item) -> void:
+	item_res = load(item.resource_path)
 	item_name = item.item_name
 	item_sprite = item.item_sprite
 	is_key_item = item.is_key_item

@@ -18,5 +18,3 @@ func get_obj_data() -> Dictionary:
 		if each.has_obj_data():
 			output = each.get_component_data()
 	return output
-
-

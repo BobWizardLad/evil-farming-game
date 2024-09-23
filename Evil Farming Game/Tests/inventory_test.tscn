@@ -29,6 +29,13 @@ offset_right = 313.0
 offset_bottom = 150.0
 text = "REMOVE CARROT"
 
+[node name="Button3" type="Button" parent="."]
+offset_left = 298.0
+offset_top = 80.0
+offset_right = 439.0
+offset_bottom = 111.0
+text = "ADD GODOT"
+
 [node name="InventoryUI" parent="." node_paths=PackedStringArray("INVENTORY_SRC", "INVCONTAINER") instance=ExtResource("5_1odfe")]
 INVENTORY_SRC = NodePath("../InventoryItemTester/Inventory")
 INVCONTAINER = NodePath("InvContainer")
@@ -38,5 +45,6 @@ metadata/_edit_use_anchors_ = true
 [connection signal="inventory_item_removed" from="InventoryItemTester/Inventory" to="InventoryUI" method="_on_inventory_item_removed"]
 [connection signal="pressed" from="Button" to="InventoryItemTester" method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="InventoryItemTester" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="InventoryItemTester" method="_on_button_3_pressed"]
 
 [editable path="InventoryUI"]
