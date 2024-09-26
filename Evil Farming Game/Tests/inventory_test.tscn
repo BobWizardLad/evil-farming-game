@@ -30,11 +30,32 @@ offset_bottom = 150.0
 text = "REMOVE CARROT"
 
 [node name="Button3" type="Button" parent="."]
-offset_left = 298.0
-offset_top = 80.0
-offset_right = 439.0
-offset_bottom = 111.0
-text = "ADD GODOT"
+offset_left = 418.0
+offset_top = 82.0
+offset_right = 528.0
+offset_bottom = 113.0
+text = "ADD FISH"
+
+[node name="Button4" type="Button" parent="."]
+offset_left = 482.0
+offset_top = 120.0
+offset_right = 623.0
+offset_bottom = 151.0
+text = "REMOVE FISH"
+
+[node name="Button5" type="Button" parent="."]
+offset_left = 293.0
+offset_top = 82.0
+offset_right = 408.0
+offset_bottom = 113.0
+text = "ADD TOMATO"
+
+[node name="Button6" type="Button" parent="."]
+offset_left = 323.0
+offset_top = 120.0
+offset_right = 470.0
+offset_bottom = 151.0
+text = "REMOVE TOMATO"
 
 [node name="InventoryUI" parent="." node_paths=PackedStringArray("INVENTORY_SRC", "INVCONTAINER") instance=ExtResource("5_1odfe")]
 INVENTORY_SRC = NodePath("../InventoryItemTester/Inventory")
@@ -46,5 +67,8 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Button" to="InventoryItemTester" method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="InventoryItemTester" method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="InventoryItemTester" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="InventoryItemTester" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button5" to="InventoryItemTester" method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button6" to="InventoryItemTester" method="_on_button_6_pressed"]
 
 [editable path="InventoryUI"]

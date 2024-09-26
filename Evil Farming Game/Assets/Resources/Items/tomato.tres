@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cgdhl5mw46shj"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Item.gd" id="1_as3q6"]
+[ext_resource type="Texture2D" uid="uid://8tqetwgdkjr7" path="res://Assets/Art/tomato.png" id="1_eu8jf"]
+
+[resource]
+script = ExtResource("1_as3q6")
+item_name = "Tomato"
+item_sprite = ExtResource("1_eu8jf")
+is_key_item = false

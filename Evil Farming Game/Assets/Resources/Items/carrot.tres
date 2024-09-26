@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://oq08m4qmovub"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Item.gd" id="1_bgwmb"]
-[ext_resource type="Texture2D" uid="uid://c1tec8elqys0e" path="res://Assets/Art/karot.png" id="1_bp06e"]
+[ext_resource type="Texture2D" uid="uid://d2fe68ahj8x5k" path="res://Assets/Art/carrot.png" id="1_rnry8"]
 
 [resource]
 script = ExtResource("1_bgwmb")
 item_name = "Carrot"
-item_sprite = ExtResource("1_bp06e")
+item_sprite = ExtResource("1_rnry8")
 is_key_item = false

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bb8oqvlcrkh3o"]
+
+[ext_resource type="Texture2D" uid="uid://c7tb1xgfn50s7" path="res://Assets/Art/fish.png" id="1_4ytwi"]
+[ext_resource type="Script" path="res://Assets/Scripts/Item.gd" id="1_dvhbo"]
+
+[resource]
+script = ExtResource("1_dvhbo")
+item_name = "Fish"
+item_sprite = ExtResource("1_4ytwi")
+is_key_item = false
