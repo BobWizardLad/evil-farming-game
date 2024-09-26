@@ -34,7 +34,10 @@ func _on_inventory_item_removed(inv_item: InventoryItem) -> void:
 	if INVCONTAINER.get_children().size() >= 1:
 		for each in INVCONTAINER.get_children():
 			if each.item_name == inv_item.item_name:
-				each.item_count -= 1
+				if each.item_count <= 1:
+					each.queue_free()
+				elif each.item_count > 1:
+					each.item_count -= 1
 				return
 		print("Inventory: Could not find item.")
 	if INVCONTAINER.get_children().size() < 1:

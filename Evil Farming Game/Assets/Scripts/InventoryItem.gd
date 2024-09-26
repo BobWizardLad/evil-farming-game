@@ -20,3 +20,4 @@ func load_item_res(item: Item) -> void:
 	item_name = item.item_name
 	item_sprite = item.item_sprite
 	is_key_item = item.is_key_item
+	item_count = 1

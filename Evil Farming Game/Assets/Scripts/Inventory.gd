@@ -27,11 +27,10 @@ func add_item(item: Item) -> void: #TEST
 		for each in _inventory:
 			if each.item_name == inv_item.item_name:
 				_inventory[(_inventory.find(each))].item_count += 1
-				break
-			else:
-				add_child(inv_item)
-				_inventory.append(inv_item)
-				break
+				emit_signal("inventory_item_added", inv_item)
+				return
+		add_child(inv_item)
+		_inventory.append(inv_item)
 	elif _inventory.size() == 0:
 		add_child(inv_item)
 		_inventory.append(inv_item)
@@ -44,7 +43,9 @@ func remove_item(item: Item) -> void: #TEST
 	inv_item.load_item_res(item)
 	for each in _inventory:
 		if item.item_name == each.item_name && each.item_count <= 1:
+			var temp = _inventory[_inventory.find(each)]
 			_inventory.remove_at(_inventory.find(each))
+			temp.queue_free()
 			break
 		elif item.item_name == each.item_name && each.item_count > 1:
 			each.item_count -= 1
