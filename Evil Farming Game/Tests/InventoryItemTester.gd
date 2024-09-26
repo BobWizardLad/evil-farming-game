@@ -8,7 +8,7 @@ extends Node2D
 @onready var fish: Item = load("res://Assets/Resources/Items/fish.tres")
 @onready var tomato: Item = load("res://Assets/Resources/Items/tomato.tres")
 
-# Called when the node enters the scene tree for the first time.
+# Cal               led when the node enters the scene tree for the first time.
 func _on_button_pressed() -> void:
 	inventory.add_item(carrot)
 
