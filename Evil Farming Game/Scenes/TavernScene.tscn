@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnmfo6p65khyq"]
+[gd_scene load_steps=6 format=3 uid="uid://cnmfo6p65khyq"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/TavernScene.gd" id="1_5th13"]
 [ext_resource type="TileSet" uid="uid://csx8n86mudhdq" path="res://Assets/Resources/Tilesets/FloorMap.tres" id="2_bgxpq"]
 [ext_resource type="PackedScene" uid="uid://l3rbfoaqqqk5" path="res://Scenes/player.tscn" id="3_lw36w"]
-[ext_resource type="PackedScene" uid="uid://u0aoecr3n06l" path="res://Scenes/inventory_item.tscn" id="4_o20gl"]
 [ext_resource type="PackedScene" uid="uid://ck7nbavhoxqkt" path="res://Scenes/item_spawner.tscn" id="6_n8oxa"]
 [ext_resource type="PackedScene" uid="uid://w8l2pr8x1f6d" path="res://Scenes/item_collector.tscn" id="7_oero0"]
-[ext_resource type="PackedScene" uid="uid://daahau2uagpb7" path="res://Scenes/inventory_ui.tscn" id="7_w5wlr"]
-[ext_resource type="PackedScene" uid="uid://d0jxeghfeitvh" path="res://Scenes/item.tscn" id="8_1gpcy"]
 
 [node name="TavernScene" type="Node2D"]
 script = ExtResource("1_5th13")
@@ -24,27 +21,7 @@ layer_1/tile_data = PackedInt32Array(524277, 589824, 2, 458741, 589824, 2, 39320
 
 [node name="Player" parent="." instance=ExtResource("3_lw36w")]
 
-[node name="Label" parent="Player/Control" index="0"]
-offset_left = 96.0
-offset_top = 10.0
-offset_right = 136.0
-offset_bottom = 33.0
-
-[node name="InventoryUI" parent="Player/Control" index="1" node_paths=PackedStringArray("INVENTORY_SRC") instance=ExtResource("7_w5wlr")]
-layout_mode = 1
-offset_left = 20.0
-offset_top = 16.0
-offset_right = 20.0
-offset_bottom = 16.0
-INVENTORY_SRC = NodePath("../../Inventory")
-
-[node name="InventoryItem" parent="Player/Inventory" index="0" instance=ExtResource("4_o20gl")]
-
 [node name="ItemSpawner" parent="." instance=ExtResource("6_n8oxa")]
-position = Vector2(190, 39)
 
 [node name="ItemCollector" parent="." instance=ExtResource("7_oero0")]
 position = Vector2(-133, -105)
-seeking_item = ExtResource("8_1gpcy")
-
-[editable path="Player"]

@@ -8,7 +8,7 @@ class_name Player
 
 # Children
 @onready var INTERACT: Area2D = $InteractArea
-@onready var ITEMS: Label = $Control/Label
+@onready var ITEMS: Label = $CanvasLayer/Control/Label
 
 # Flag for certainn interactables active
 var interactable: bool = false

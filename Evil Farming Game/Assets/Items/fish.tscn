@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0uk4gel18om5"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/GameItem.gd" id="1_r1yxs"]
+[ext_resource type="Texture2D" uid="uid://c7tb1xgfn50s7" path="res://Assets/Art/fish.png" id="2_2644n"]
+[ext_resource type="Texture2D" uid="uid://c1tec8elqys0e" path="res://Assets/Art/karot.png" id="2_yaf0x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8xfop"]
+radius = 8.48291
+height = 39.5869
+
+[node name="Fish" type="StaticBody2D" groups=["Item"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_r1yxs")
+item_name = "Fish"
+item_count = 1
+item_sprite = ExtResource("2_2644n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yaf0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+rotation = 0.761733
+shape = SubResource("CapsuleShape2D_8xfop")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://l3rbfoaqqqk5"]
+[gd_scene load_steps=14 format=3 uid="uid://l3rbfoaqqqk5"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Player.gd" id="1_ejti4"]
 [ext_resource type="Texture2D" uid="uid://brk2a3h2ia6la" path="res://Assets/Art/Guy.png" id="2_df38p"]
 [ext_resource type="PackedScene" uid="uid://d35wgnmk4rtqt" path="res://Scenes/inventory.tscn" id="3_04dnc"]
+[ext_resource type="PackedScene" uid="uid://daahau2uagpb7" path="res://Scenes/inventory_ui.tscn" id="3_omxun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec2i2"]
 size = Vector2(22.5, 18)
@@ -64,6 +65,37 @@ radius = 23.0
 script = ExtResource("1_ejti4")
 metadata/_edit_group_ = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0130208
+anchor_top = 0.85108
+anchor_right = 0.0130208
+anchor_bottom = 0.85108
+offset_top = -11.5
+offset_right = 40.0
+offset_bottom = 11.5
+grow_vertical = 2
+text = "Test"
+metadata/_edit_use_anchors_ = true
+
+[node name="InventoryUI" parent="CanvasLayer/Control" node_paths=PackedStringArray("INVENTORY_SRC") instance=ExtResource("3_omxun")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+grow_vertical = 0
+INVENTORY_SRC = NodePath("../../../Inventory")
+
 [node name="MapCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-0.25, 7)
 shape = SubResource("RectangleShape2D_ec2i2")
@@ -84,22 +116,6 @@ shape = SubResource("CircleShape2D_fulfv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.75, 1.75)
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -325.0
-offset_top = -180.0
-offset_right = -285.0
-offset_bottom = -140.0
-
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 18.0
-offset_right = 65.0
-offset_bottom = 41.0
-text = "Test"
 
 [node name="Inventory" parent="." instance=ExtResource("3_04dnc")]
 

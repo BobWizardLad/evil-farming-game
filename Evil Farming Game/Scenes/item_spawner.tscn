@@ -1,13 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck7nbavhoxqkt"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/ItemSpawner.gd" id="1_d0sne"]
-[ext_resource type="PackedScene" uid="uid://d0jxeghfeitvh" path="res://Scenes/item.tscn" id="2_toekh"]
+[ext_resource type="PackedScene" uid="uid://dthtbxwi8mbjf" path="res://Assets/Items/carrot.tscn" id="2_pm5qe"]
 
 [node name="ItemSpawner" type="Node2D"]
 position = Vector2(343, 117)
 script = ExtResource("1_d0sne")
-ITEM = ExtResource("2_toekh")
-spawn_delay = 1.5
+ITEM = ExtResource("2_pm5qe")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 one_shot = true
