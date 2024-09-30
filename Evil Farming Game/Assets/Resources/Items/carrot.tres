@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://oq08m4qmovub"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/Item.gd" id="1_bgwmb"]
+[ext_resource type="Script" path="res://Assets/Scripts/Inventory/Item.gd" id="1_bgwmb"]
 [ext_resource type="Texture2D" uid="uid://d2fe68ahj8x5k" path="res://Assets/Art/carrot.png" id="1_rnry8"]
 
 [resource]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hamqyb4xlm7m"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/inventory_ui_box.gd" id="1_cfkau"]
+[ext_resource type="Script" path="res://Assets/Scripts/Inventory/inventory_ui_box.gd" id="1_cfkau"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_oe0w3"]
 size = Vector2(32, 32)

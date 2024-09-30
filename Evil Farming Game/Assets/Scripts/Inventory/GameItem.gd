@@ -7,7 +7,6 @@ class_name GameItem
 @export var item_count: int
 @export var item_sprite: Texture2D
 @export var is_key_item: bool
-@export var is_seed: bool
 
 # Return a dictionary of all attributes keyed by name of the object's FIRST
 # component child. GameItems will only be one thing, so multi-component
